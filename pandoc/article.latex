@@ -1,0 +1,39 @@
+\documentclass[3p,10pt,letterpaper]{elsarticle}
+
+\usepackage{geometry}
+\newgeometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+
+\begin{document}
+
+$if(title)$
+\title{{\bfseries $title$}}
+$endif$
+
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+
+$if(author)$
+\author{$author$}
+$endif$
+
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+\maketitle
+
+$body$
+
+\makeatletter
+\def\ps@pprintTitle{%
+%%   \let\@oddhead\@empty
+%%   \let\@evenhead\@empty
+  \let\@oddfoot\@empty
+  \let\@evenfoot\@empty
+}
+\makeatother
+
+\end{document}
